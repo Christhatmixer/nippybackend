@@ -1,6 +1,9 @@
 import stripe
 import sys
 import json
+import psycopg2
+import psycopg2.extras
+import os
 import requests
 from flask import Flask, render_template, request, jsonify
 
@@ -8,7 +11,7 @@ from flask import Flask, render_template, request, jsonify
 stripe.api_key = "sk_live_gSZhEw9uwQwEyEpLEftrbGzn"
 
 app = Flask(__name__)
-
+app.config['DATABASE_URL'] = os.environ['DATABASE_URL']
 
 @app.route("/", methods=['GET', 'POST'])
 def pay():
@@ -30,7 +33,7 @@ def pay():
       
     )
 
-    return "hello chris"
+    return "payment completed"
 @app.route("/order", methods=['GET', 'POST'])
 def order():
     data = request.json
