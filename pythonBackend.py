@@ -8,7 +8,7 @@ import requests
 from flask import Flask, render_template, request, jsonify
 
 
-stripe.api_key = "sk_live_gSZhEw9uwQwEyEpLEftrbGzn"
+stripe.api_key = ""
 
 app = Flask(__name__)
 app.config['DATABASE_URL'] = os.environ['DATABASE_URL']
