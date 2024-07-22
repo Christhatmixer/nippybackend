@@ -2,7 +2,7 @@
 # https://github.com/Damnever/pigar
 
 # pythonBackend.py: 5
-Flask == 0.12.2
+Flask == 1.0
 
 # pythonBackend.py: 4
 requests == 2.18.4
